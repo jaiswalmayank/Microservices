@@ -1,0 +1,40 @@
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+zuul:
+  #Service will be mapped under the /api URI
+  prefix: /api
+  routes:
+    QuickCarPool:
+      path: /QuickCarPool/**
+      url: http://localhost:9001
+    QuickCarPool-BillingServices:
+      path: /QuickCarPool-BillingServices/**
+      url: http://localhost:9002
+    QuickCarPool-DriverManagmentServices:
+      path: /QuickCarPool-DriverManagmentServices/**
+      url: http://localhost:9003
+    QuickCarPool-NotificationsServices:
+      path: /QuickCarPool-NotificationsServices/**
+      url: http://localhost:9005
+    QuickCarPool-PassangerManagement:
+      path: /QuickCarPool-PassangerManagement/**
+      url: http://localhost:9006
+    QuickCarPool-PaymentServices:
+      path: /QuickCarPool-PaymentServices/**
+      url: http://localhost:9007
+    QuickCarPool-TripManagmentServices:
+      path: /QuickCarPool-TripManagmentServices/**
+      url: http://localhost:9008
+    QuickCarPool-Auth:
+      path: /QuickCarPool-Auth/**
+      url: http://localhost:9009
+    QuickCarPool-Gateway:
+      path: /QuickCarPool-Gateway/**
+      url: http://localhost:9010
+    
+    
